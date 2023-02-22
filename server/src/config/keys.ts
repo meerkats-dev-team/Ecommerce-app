@@ -4,15 +4,15 @@ if(process.env.NODE_ENV !== 'PRODUCTION') dotenv.config()
 
 type Keys =  {
     PORT: number | unknown,
-    HOST: string | undefined,
+    DOMAIN: string | undefined,
     MONGO_URI: string | undefined,
 }
 
-const { PORT, HOST, MONGO_URI } = process.env
+const { PORT, DOMAIN, MONGO_URI } = process.env
 
 const keys: Keys = {
     PORT,
-    HOST,
+    DOMAIN,
     MONGO_URI
 }
 
