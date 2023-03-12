@@ -1,8 +1,8 @@
 import { isValidObjectId } from "mongoose";
 import { boolean, object, string } from "zod";
 
-export default class CategoryDataSchema {
-    
+export default class BrandDataSchema {
+
     private readonly data = {
         body: object({
             title: string({
@@ -33,19 +33,19 @@ export default class CategoryDataSchema {
         }),
     }
 
-    public addCategorySchema = object({
+    public addBrandSchema = object({
         ...this.data
     })
 
-    public getCategorySchema = object({
+    public getBrandSchema = object({
         ...this.params
     })
 
-    public deleteCategorySchema = object({
+    public deleteBrandSchema = object({
         ...this.params
     })
 
-    public updateCategorySchema = object({
+    public updateBrandSchema = object({
         ...this.data,
         ...this.params
     })

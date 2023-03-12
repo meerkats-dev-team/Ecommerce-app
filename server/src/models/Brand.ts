@@ -1,18 +1,18 @@
 import mongoose, { Schema } from 'mongoose'
 
-const categorySchema = new Schema({
+const brandSchema = new Schema({
     title: {
         type: String,
-        required: [true, 'Please enter category name.'],
+        required: [true, 'Please enter brand name.'],
         lowercase: true,
-        minLength: [3, 'Must be at least 3, got { VALUE }'],
+        minLength: [3, 'Title must be at least 3, got { VALUE }'],
         maxLength: [50, 'Must be at maximum 50, got { VALUE }'],
         trim: true,
         unique: true
     },
     description: {
         type: String,
-        required: [true, 'Please enter category description.'],
+        required: [true, 'Please enter brand description.'],
         lowercase: true,
         minLength: [10, 'Must be at least 10, got { VALUE }'],
         maxLength: [1000, 'Must be at maximum 1000, got { VALUE }'],
@@ -32,8 +32,8 @@ const categorySchema = new Schema({
         type: Boolean,
         default: false
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
-const Category = mongoose.model('Category', categorySchema)
+const Brand = mongoose.model('Brand', brandSchema)
 
-export default Category
+export default Brand
